@@ -1,0 +1,132 @@
+
+!
+!     ██╗  ██╗ ██████╗  ███████╗ ███████╗  ██████╗  ██╗   ██╗ ██████╗   ██████╗ ███████╗ ███████╗ 
+!     ╚██╗██╔╝ ██╔══██╗ ██╔════╝ ██╔════╝ ██╔═══██╗ ██║   ██║ ██╔══██╗ ██╔════╝ ██╔════╝ ██╔════╝ 
+!      ╚███╔╝  ██████╔╝ █████╗   ███████╗ ██║   ██║ ██║   ██║ ██████╔╝ ██║      █████╗   ███████╗ 
+!      ██╔██╗  ██╔══██╗ ██╔══╝   ╚════██║ ██║   ██║ ██║   ██║ ██╔══██╗ ██║      ██╔══╝   ╚════██║ 
+! ██╗ ██╔╝ ██╗ ██║  ██║ ███████╗ ███████║ ╚██████╔╝ ╚██████╔╝ ██║  ██║ ╚██████╗ ███████╗ ███████║ 
+! ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚══════╝ ╚══════╝  ╚═════╝   ╚═════╝  ╚═╝  ╚═╝  ╚═════╝ ╚══════╝ ╚══════╝ 
+!
+
+! general settings
+URxvt*saveline:         15000
+URxvt*termName:         rxvt-256color
+URxvt*iso14755:         false
+
+xterm*dynamicColors: true
+urxvt*dynamicColors: on
+
+! appearance
+!URxvt*depth:            0
+URxvt.underlineColor:   #4682B4
+URxvt.highlightColor:   #4682B4
+URxvt.throughColor:     Blue
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt*internalBorder:   0
+URxvt*externalBorder:   0
+!URxvt.colorIT:      	#87af5f
+!URxvt.colorBD:      	#c5c8c6
+!URxvt.colorUL:      	#87afd7
+URxvt.geometry: 		92x16
+!URxvt.internalBorder:	10
+!URxvt.internalBorder:	5
+!URxvt.externalBorder:   5
+!URxvt.borderColor:	#ffffff
+
+! Generated with :
+! XRDB2Xreources.py
+!
+!!*.foreground:  			#a1b0b8
+*.foreground:  				#cccccc
+*.background:  				#090909
+!*.background:  			#222222
+.cursorColor: 				#ff443e
+*URxvt*cursorColor2:     	Black
+URxvt.cursorBlink:          false
+URxvt.cursorUnderline:      false
+
+! Black
+*.color0:      #230046
+*.color8:      #372d46
+!
+! Red
+*.color1:      #7d1625
+*.color9:      #e05167
+!
+! Green
+*.color2:      #337e6f
+*.color10:     #52e0c4
+!
+! Yellow
+*.color3:      #7f6f49
+*.color11:     #e0c386
+!
+! Blue
+*.color4:      #4f4a7f
+*.color12:     #8e87e0
+!
+! Magenta
+*.color5:      #5a3f7f
+*.color13:     #a776e0
+!
+! Cyan
+*.color6:      #58777f
+*.color14:     #9ad4e0
+!
+! White
+*.color7:      #736e7d
+*.color15:     #8c91fa
+!
+! Bold, Italic, Underline
+*.colorBD:     #8c91fa
+!*.colorIT:
+!*.colorUL:
+!
+! fonts
+!URxvt*letterSpace: 	    	-1
+!Xft.size:						8.1
+URxvt*font: 			xft:xos4 Terminus:size=10
+URxvt*imFont: 			xft:xos4 Terminus:size=10
+URxvt*boldFont: 		xft:xos4 Terminus:size=10
+URxvt*italicFont: 		xft:xos4 Terminus:size=10
+URxvt*boldItalicFont: 		xft:xos4 Terminus:size=10
+
+URxvt.perl-ext-common:  default,matcher,clipboard
+URxvt.matcher.button:   1
+
+! macros for clipboard and selection
+URxvt.copyCommand:      xclip -i -selection clipboard
+URxvt.pasteCommand:     xclip -o -selection clipboard
+URxvt.keysym.M-c:       perl:clipboard:copy
+URxvt.keysym.m-v:       perl:clipboard:paste
+URxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:       perl:keyboard-select:search
+URxvt.keysym.M-u:       perl:url-select:select_next
+URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.underlineURLs:    true
+URxvt.urlButton:        1
+
+! tabbed
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    4
+URxvt*buffered:         false
+
+! ------------------------------------------------------------------------------
+! ROFI setup
+! ------------------------------------------------------------------------------
+
+!rofi.separator-style:   solid
+rofi.font:				xos4 Terminus 12
+!rofi.color-enabled:     true
+!rofi.padding:           50
+!rofi.line-margin:       5
+rofi.lines:             1
+!rofi.width:             720
+!rofi.disable-history:   true
+!rofi.modi:              keys,drun,window,run
+!rofi.sidebar-mode:      true
+!rofi.fullscreen:        false

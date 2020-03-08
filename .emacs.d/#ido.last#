@@ -1,0 +1,28 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/kaede/.config/" . "i3/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/kaede/.config/i3/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "config"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/kaede/.config/i3/" (23695 12495 433095 589000) "./" "i3blocks.conf" "reload.sh" "../" "scripts/" "i3blocks.conf.bak" "config")
+
+ ("/home/kaede/.config/" (23695 7872 976478 456000) "pavucontrol.ini" "xfce4/" "i3/" "./" "polybar/" "menus/" "dconf/" "pulse/" "compton/" "../" "mpv/" "gconf/" "mimeapps.list" "ranger/" "neofetch/" "gtk-3.0/" "QtProject.conf" "google-chrome/" "qBittorrent/" "nautilus/" "gtk-2.0/" "htop/")
+
+ ("/home/kaede/" (23695 61833 296666 484000) ".cache/" ".vim/" "mount/" ".mozilla/" ".screenlayout/" ".viminfo" "Desktop/" "2019-03-05-181310_585x672_scrot.png" ".lesshst" "./" ".fehbg" ".local/" ".bash_logout" "evo/" ".nv/" ".Xauthority" ".xinitrc" "nudes_dump/" "../" ".emacs-backups/" ".pki/" "3/" ".background" "[PickUP] RSD Max - The Natural.torrent" "natural" ".bash_profile" ".bashrc" "Downloads/" ".python_history" "cs/" ".Xresources" "4coder/" "game/" ".emacs.d/" "workout" "Images/" ".esd_auth" ".emacs" ".config/" "3d_engine" ".bash_history")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

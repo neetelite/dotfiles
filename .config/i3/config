@@ -1,0 +1,232 @@
+# set mod
+set $mod Mod4
+
+#disable window bar
+new_window pixel
+
+# window border
+#for_window [class="^.*"] border pixel 1
+
+# font 1
+font pango:xos4 Terminus 12
+
+# font 2
+#font pango:DejaVu Sans Mono 10
+
+# drag floating windows
+floating_modifier $mod
+
+# start terminal
+#bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+q kill
+
+# start rofi
+bindsym $mod+d exec dmenu_run -b -p "run" -sf "#ffffff" -sb "#212121" -nf "#666666" -nb "#0f0f0f" -fn "xos4 Terminus"
+#bindsym $mod+d exec rofi -show run -theme bw
+#bindsym $Alt+Tab exec rofi -show window
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# disable mouse focus
+focus_follows_mouse no
+
+# add horizontaly
+bindsym $mod+c split h
+
+# add verticaly
+bindsym $mod+v split v
+
+# enter fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# change container layout
+bindsym $mod+Ctrl+s layout stacking
+bindsym $mod+Ctrl+w layout tabbed
+bindsym $mod+Ctrl+e layout toggle split
+
+# toggle tiling/floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus parent container
+#bindsym $mod+a focus parent
+
+# focus child container
+#bindsym $mod+d focus child
+
+# workspace variables
+#set $workspace1 "1"
+#set $workspace2 "2"
+#set $workspace3 "3"
+#set $workspace4 "4"
+#set $workspace5 "5"
+#set $workspace6 "6"
+#set $workspace7 "7"
+#set $workspace8 "8"
+#set $workspace9 "9"
+#set $workspace0 "0"
+
+# workspace variables
+#set $workspace1 "0:internet"
+#set $workspace2 "1:virtual"
+#set $workspace3 "2:something"
+#set $workspace4 "3:chat"
+#set $workspace5 "4:music"
+#set $workspace6 "5:browser"
+#set $workspace7 "6:development"
+#set $workspace8 "7:editor"
+#set $workspace9 "8:terminal"
+#set $workspace0 "9:desktop"
+
+
+# workspace variables
+set $workspace1 "0:1"
+set $workspace2 "1:2"
+set $workspace3 "2:3"
+set $workspace4 "3:4"
+set $workspace5 "4:5"
+set $workspace6 "5:6"
+set $workspace7 "6:7"
+set $workspace8 "7:8"
+set $workspace9 "8:9"
+set $workspace0 "9:0"
+
+#set $workspace1 "A"
+#set $workspace2 "B"
+#set $workspace3 "C"
+#set $workspace4 "D"
+#set $workspace5 "E"
+#set $workspace6 "K"
+#set $workspace7 "W"
+#set $workspace8 "X"
+#set $workspace9 "Y"
+#set $workspace0 "Z"
+
+# monitor variables
+set $monitor0 "eDP-1-1"
+set $monitor1 "HDMI-0"
+
+# workspace default monitors
+workspace $workspace1 output $monitor0
+workspace $workspace2 output $monitor0
+workspace $workspace3 output $monitor0
+workspace $workspace4 output $monitor0
+workspace $workspace5 output $monitor0
+workspace $workspace6 output $monitor1
+workspace $workspace7 output $monitor1
+workspace $workspace8 output $monitor1
+workspace $workspace9 output $monitor1
+workspace $workspace0 output $monitor1
+
+# switch workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace0
+
+# restart i3
+bindsym $mod+Shift+r restart
+#exec_always bash -i $HOME/.config/i3/reload.sh
+
+# exit i3
+bindsym $mod+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize grow width 12 px or 12 ppt
+        bindsym j resize grow height 12 px or 12 ppt
+        bindsym k resize shrink height 12 px or 12 ppt
+        bindsym l resize shrink width 12 px or 12 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# colors
+set $FOCUSBG            #484848
+set $FOCUSFG            #bbbbbb
+set $UNFOCUSBG          #111111
+set $UNFOCUSFG          #555555
+set $URGENT             #f4511e
+
+# window colors                         border          background              text            indicator
+client.focused                          $FOCUSBG        $FOCUSBG                $FOCUSFG        $FOCUSBG
+client.focused_inactive                 $UNFOCUSBG      $UNFOCUSBG              $UNFOCUSFG      $UNFOCUSBG
+client.unfocused                        $UNFOCUSBG      $UNFOCUSBG              $UNFOCUSFG      $UNFOCUSBG
+client.urgent                           $URGENT         $URGENT                 $URGENT         $URGENT
+client.background                       $FOCUSBG
+
+# hide edge borders
+smart_borders on
+#hide_edge_borders horizontal
+#hide_edge_borders <none|vertical|horizontal|both>
+
+#binds
+#bindsym $mod+u exec emacs
+bindsym $mod+u exec gvim
+bindsym $mod+e exec thunar
+bindsym $mod+p exec pavucontrol
+
+# volume keys
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioMute exec amixer sset Master toggle
+
+# media keys
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# force workspace
+
+# force floating
+#for_window [title="Steam*"] floating enable
+for_window [title="C_XCB_DEV*"] floating enable
+for_window [title="SpeedCrunch"] floating enable
+for_window [title="Grand Theft Desu"] floating enable
+
+# startup apps
+exec_always bash ~/.config/i3/reload.sh
+#exec bash ~/.screenlayout/hdmi.sh
+
+# gaps
+#smart_gaps on
+#gaps inner 10
+#gaps outer 0
