@@ -19,8 +19,8 @@ else
         polybar main &
 fi
 
-# swap caps with escape
-setxkbmap -option caps:swapescape
+# swap caps with escape NOTE: Remove on VirtualMachines
+#setxkbmap -option caps:swapescape
 
 # change background
 feh --bg-fill $HOME/.background
