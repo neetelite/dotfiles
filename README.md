@@ -1,6 +1,6 @@
-# dotfiles
+#Dotfiles
 
-## installation
+## Installation
 ```console
 git clone https://github.com/neetelite/dotfiles ~/.dotfiles
 cd ~/.dotfiles
