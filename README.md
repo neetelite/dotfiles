@@ -9,5 +9,5 @@ git clone https://github.com/neetelite/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 
 chmod +x install.py
-./install.sh
+./install.py
 ```
