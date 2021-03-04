@@ -86,11 +86,11 @@ URxvt.cursorUnderline:      false
 ! fonts
 !URxvt*letterSpace: 	    	-1
 !Xft.size:						8.1
-URxvt*font: 			xft:xos4 Terminus:size=10
-URxvt*imFont: 			xft:xos4 Terminus:size=10
-URxvt*boldFont: 		xft:xos4 Terminus:size=10
-URxvt*italicFont: 		xft:xos4 Terminus:size=10
-URxvt*boldItalicFont: 		xft:xos4 Terminus:size=10
+URxvt*font: 			xft:xos4 Terminus:size=14
+URxvt*imFont: 			xft:xos4 Terminus:size=14
+URxvt*boldFont: 		xft:xos4 Terminus:size=14
+URxvt*italicFont: 		xft:xos4 Terminus:size=14
+URxvt*boldItalicFont: 		xft:xos4 Terminus:size=14
 
 URxvt.perl-ext-common:  default,matcher,clipboard
 URxvt.matcher.button:   1
