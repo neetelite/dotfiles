@@ -1,7 +1,7 @@
 # Dotfiles
 
 ## Dependencies
-1. Python
+1. Python (for installation)
 
 ## Installation
 ```console
