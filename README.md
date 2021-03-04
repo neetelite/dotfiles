@@ -1,5 +1,8 @@
 # Dotfiles
 
+## Dependencies
+1. Python
+
 ## Installation
 ```console
 git clone https://github.com/neetelite/dotfiles ~/.dotfiles
