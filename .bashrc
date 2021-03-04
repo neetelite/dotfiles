@@ -6,7 +6,8 @@
 [[ $- != *i* ]] && return
 
 alias ls="ls --color=auto"
-alias ll="ls -al"
+alias ll="ls -l"
+alias lla="ls -la"
 
 alias vi="vim"
 
