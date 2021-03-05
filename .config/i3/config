@@ -221,6 +221,7 @@ bindsym XF86AudioPrev exec playerctl previous
 for_window [title="C_XCB_DEV*"] floating enable
 for_window [title="SpeedCrunch"] floating enable
 for_window [title="Grand Theft Desu"] floating enable
+for_window [title="^DEV"] floating enable
 
 # startup apps
 exec_always bash ~/.config/i3/reload.sh

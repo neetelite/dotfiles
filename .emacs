@@ -153,7 +153,8 @@
 (set-face-attribute 'highlight-ff0040 'nil :background "#ff0040" :foreground "#000")
 
 ;font
-(set-face-attribute 'default nil :family "xos4 Terminus" :height 122)
+;(set-face-attribute 'default nil :family "xos4 Terminus" :height 122)
+(set-face-attribute 'default nil :family "misc Tamsyn" :height 130)
 
 ;compilation
 (setq compilation-directory-locked nil)
