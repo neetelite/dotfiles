@@ -6,6 +6,10 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+(setq-default truncate-lines t)
+(setq-default global-visual-line-mode t)
+(setq inhibit-splash-screen t)
+
 ;evil
 (require 'evil)
 (evil-mode t)
@@ -154,7 +158,7 @@
 
 ;font
 ;(set-face-attribute 'default nil :family "xos4 Terminus" :height 122)
-(set-face-attribute 'default nil :family "misc Tamsyn" :height 130)
+(set-face-attribute 'default nil :family "misc Tamsyn" :height 140)
 
 ;compilation
 (setq compilation-directory-locked nil)
