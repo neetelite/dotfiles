@@ -5,7 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls="ls --color=auto"
+alias kill="kill -s KILL"
+alias term="kill -s TERM"
+
+alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -l"
 alias lla="ls -la"
 

@@ -10,6 +10,24 @@
 (setq-default global-visual-line-mode t)
 (setq inhibit-splash-screen t)
 
+;backups
+(setq create-lockfiles nil)
+(setq backup-directory-alist `(("." . "~/.backup")))
+(setq delete-old-versions t kept-new-versions 6 kept-old-versions 2 version-control t)
+
+(setq backup-by-copying t)
+(setq backup-by-copying-when-linked t)
+(setq backup-by-copying-when-mismatch t)
+
+
+;block collapse
+(add-hook 'c-mode-common-hook #'hs-minor-mode)
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+
+;auto complete
+(add-hook 'after-init-hook 'global-company-mode)
+(setq ess-use-company t)
+
 ;evil
 (require 'evil)
 (evil-mode t)
@@ -46,25 +64,34 @@
 ;(set-frame-parameter (selected-frame) 'alpha '(100 . 100)) ;//focused / unfocused
 
 ;theme
-(load-theme 'tao-yin t)
+;(load-theme 'doom-old-hope t)
 
-;colors
-;(set-background-color "#040404") ;background ;windows
-(set-background-color "#080808") ;background ;linux
-(set-foreground-color "#bababa") ;foreground
-(set-face-attribute 'hl-line nil :background 'nil :box 'nil) ;line higlight
-(set-face-attribute 'font-lock-builtin-face nil :background "#000" :foreground "#fff") ;#define, #include
-(set-face-attribute 'font-lock-constant-face nil :background "#555" :foreground "#000") ;constants, true / false
-(set-face-attribute 'font-lock-comment-face nil :background 'nil :foreground "#555" :underline 'nil) ;comments
-(set-face-attribute 'font-lock-string-face nil :background "#111" :underline 't) ;strings
-(set-face-attribute 'font-lock-keyword-face nil :foreground "#fff" :overline 'nil) ;keywords
-(set-face-attribute 'font-lock-negation-char-face nil :background "#111" :foreground "#fff") ;negation-char
-(set-face-attribute 'font-lock-preprocessor-face nil :background "#eee" :foreground "#000") ;preprocessor
-(set-face-attribute 'font-lock-warning-face nil :background "#FF6969") ;warning
-(set-face-attribute 'font-lock-type-face nil :background "#444" :underline 'nil) ;types
-(set-face-attribute 'font-lock-function-name-face nil :background 'nil :box 'nil) ;function names
-(set-face-attribute 'font-lock-variable-name-face nil :background 'nil :underline 'nil) ;variable declare
-(set-face-attribute 'region nil :background 'nil :foreground 'nil) ;select highlight
+;theme DOOM DARK
+;(load-theme 'doom-dark+ t)
+;(set-background-color "#0a0a0a") ;background ;linux
+;(set-face-attribute 'hl-line nil :background 'nil :box 'nil) ;line higlight
+
+;theme SOLARIZED
+(load-theme 'doom-solarized-dark-high-contrast t)
+
+;theme BLACK AND WHITE
+;(load-theme 'tao-yin t)
+;;(set-background-color "#040404") ;background ;windows
+;(set-background-color "#080808") ;background ;linux
+;(set-foreground-color "#bababa") ;foreground
+;(set-face-attribute 'hl-line nil :background 'nil :foreground 'nil :inverse-video 'nil) ;line higlight
+;(set-face-attribute 'font-lock-builtin-face nil :background "#000" :foreground "#fff" :weight 'bold) ;#define, #include
+;(set-face-attribute 'font-lock-constant-face nil :background "#222" :foreground "#000" :weight `light) ;constants, true / false
+;(set-face-attribute 'font-lock-comment-face nil :background 'nil :foreground "#333" :underline 'nil) ;comments
+;(set-face-attribute 'font-lock-string-face nil :background "#000" :foreground 'nil :underline 't) ;strings
+;(set-face-attribute 'font-lock-negation-char-face nil :background 'nil :foreground "#fff") ;negation-char
+;(set-face-attribute 'font-lock-preprocessor-face nil :background "#fff" :foreground "#000") ;preprocessor
+;(set-face-attribute 'font-lock-function-name-face nil :background "#eee" :foreground "#000" :weight `bold) ;function names
+;(set-face-attribute 'font-lock-warning-face nil :background "#f00") ;warning
+;(set-face-attribute 'region nil :background 'nil :foreground 'nil) ;select highlight
+;(set-face-attribute 'font-lock-type-face    nil :background "#444" :foreground "#000" :weight 'bold) ;types
+;(set-face-attribute 'font-lock-keyword-face nil :background "#000" :foreground "#fff" :weight `bold) ;keywords (struct, enum, if, while)
+;(set-face-attribute 'font-lock-variable-name-face nil :background 'nil :foreground 'nil :weight 'normal) ;variable declare
 
 ;evil colors
 (setq evil-emacs-state-cursor '("red" box))
@@ -157,8 +184,12 @@
 (set-face-attribute 'highlight-ff0040 'nil :background "#ff0040" :foreground "#000")
 
 ;font
-;(set-face-attribute 'default nil :family "xos4 Terminus" :height 122)
-(set-face-attribute 'default nil :family "misc Tamsyn" :height 140)
+;(set-face-attribute 'default nil :family "xos4 Terminus" :height 160)
+;(set-face-attribute 'default nil :family "xos4 Terminus" :height 100)
+(set-face-attribute 'default nil :family "misc Tamsyn" :height 180)
+;(set-face-attribute 'default nil :family "misc Tamsyn" :height 140)
+;(set-face-attribute 'default nil :family "misc Tamsyn" :height 120)
+;(set-face-attribute 'default nil :family "misc Tamsyn" :height 110)
 
 ;compilation
 (setq compilation-directory-locked nil)
@@ -197,9 +228,9 @@
 (electric-pair-mode 1)
 
 ;tabs
-(setq default-tab-width 8)
+(setq default-tab-width 4)
 (setq backward-delete-char-untabify-method 'hungry)
-(setq-default c-default-style "linux" c-basic-offset 8 tab-width 8 indent-tabs-mode t)
+(setq-default c-default-style "linux" c-basic-offset 4 tab-width 4 indent-tabs-mode t)
 
 ;close all buffers
 (defun close-all-buffers ()
@@ -426,3 +457,54 @@
 (setq backup-inhibited t)
 ;disable auto save
 (setq auto-save-default nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#002732" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#8d9fa1"])
+ '(custom-safe-themes
+   '("4f1d2476c290eaa5d9ab9d13b60f2c0f1c8fa7703596fa91b235db7f99a9441b" "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53" "f6665ce2f7f56c5ed5d91ed5e7f6acb66ce44d0ef4acfaa3a42c7cfe9e9a9013" "1f1b545575c81b967879a5dddc878783e6ebcca764e4916a270f9474215289e5" "a82ab9f1308b4e10684815b08c9cac6b07d5ccb12491f44a942d845b406b0296" "234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" "97db542a8a1731ef44b60bc97406c1eb7ed4528b0d7296997cbb53969df852d6" "cbdf8c2e1b2b5c15b34ddb5063f1b21514c7169ff20e081d39cf57ffee89bc1e" "6c98bc9f39e8f8fd6da5b9c74a624cbb3782b4be8abae8fd84cbc43053d7c175" "028c226411a386abc7f7a0fba1a2ebfae5fe69e2a816f54898df41a6a3412bb5" "613aedadd3b9e2554f39afe760708fc3285bf594f6447822dd29f947f0775d6c" "f91395598d4cb3e2ae6a2db8527ceb83fed79dbaf007f435de3e91e5bda485fb" "da186cce19b5aed3f6a2316845583dbee76aea9255ea0da857d1c058ff003546" "a9a67b318b7417adbedaab02f05fa679973e9718d9d26075c6235b1f0db703c8" "7a7b1d475b42c1a0b61f3b1d1225dd249ffa1abb1b7f726aec59ac7ca3bf4dae" "1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" default))
+ '(exwm-floating-border-color "#011417")
+ '(fci-rule-color "#62787f")
+ '(highlight-tail-colors
+   ((("#0e332f" "#0e332f" "green")
+	 . 0)
+	(("#06343d" "#06343d" "brightcyan")
+	 . 20)))
+ '(jdee-db-active-breakpoint-face-colors (cons "#01323d" "#3c98e0"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#01323d" "#93a61a"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#01323d" "#56697A"))
+ '(objed-cursor-color "#ec423a")
+ '(pdf-view-midnight-colors (cons "#8d9fa1" "#002732"))
+ '(rustic-ansi-faces
+   ["#002732" "#ec423a" "#93a61a" "#c49619" "#3c98e0" "#e2468f" "#3cafa5" "#8d9fa1"])
+ '(vc-annotate-background "#002732")
+ '(vc-annotate-color-map
+   (list
+	(cons 20 "#93a61a")
+	(cons 40 "#a3a019")
+	(cons 60 "#b39b19")
+	(cons 80 "#c49619")
+	(cons 100 "#cb811c")
+	(cons 120 "#d36c1f")
+	(cons 140 "#db5823")
+	(cons 160 "#dd5247")
+	(cons 180 "#df4c6b")
+	(cons 200 "#e2468f")
+	(cons 220 "#e54472")
+	(cons 240 "#e84356")
+	(cons 260 "#ec423a")
+	(cons 280 "#c64b4a")
+	(cons 300 "#a1555a")
+	(cons 320 "#7b5f6a")
+	(cons 340 "#62787f")
+	(cons 360 "#62787f")))
+ '(vc-annotate-very-old-color nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

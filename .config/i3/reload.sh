@@ -19,6 +19,10 @@ else
         polybar main &
 fi
 
+#disable touchpad
+xinput disable "SynPS/2 Synaptics TouchPad"
+#xinput enable "SynPS/2 Synaptics TouchPad"
+
 # swap caps with escape NOTE: Remove on VirtualMachines
 setxkbmap -option caps:swapescape
 
